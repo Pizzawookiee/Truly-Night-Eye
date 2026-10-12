@@ -7,8 +7,16 @@
       "sourceSHA256": "1ed0f903945c6aef8001f8446f89771f1a26be51f0af008959106811d917da55",
       "os217": false,
       "insertions": [
-        { "anchor": "PS_OUTPUT main(PS_INPUT input", "asset": "Declarations.hlsli", "after": false },
-        { "anchor": "\tfloat3 outputAlbedo = indirectLobeWeights.diffuse * vertexColor.xyz;", "asset": "Lighting.hlsli", "after": false }
+        {
+          "anchor": "PS_OUTPUT main(PS_INPUT input",
+          "asset": "Declarations.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\tfloat3 outputAlbedo = indirectLobeWeights.diffuse * vertexColor.xyz;",
+          "asset": "Lighting.hlsli",
+          "after": false
+        }
       ]
     },
     {
@@ -17,10 +25,26 @@
       "sourceSHA256": "949c7b0f0fa3749371a86a8639cc971bcd2a59b563e9f3fd93e36fc8ad8f447a",
       "os217": false,
       "insertions": [
-        { "anchor": "PS_OUTPUT main(PS_INPUT input", "asset": "Declarations.hlsli", "after": false },
-        { "anchor": "#\tif !defined(MOTIONVECTORS_NORMALS)\n\tfloat fogFactor = Color::FogAlpha(input.FogParam.w);", "asset": "EffectActor.hlsli", "after": false },
-        { "anchor": "\talpha = Color::EffectAlpha(alpha);", "asset": "EffectEyes.hlsli", "after": true },
-        { "anchor": "\tpsout.Albedo = float4(psout.Diffuse.xyz * !(Permutation::VertexShaderDescriptor & Permutation::EffectFlags::SkyObject), finalColor.w);", "asset": "EffectAlbedo.hlsli", "after": true }
+        {
+          "anchor": "PS_OUTPUT main(PS_INPUT input",
+          "asset": "Declarations.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "#\tif !defined(MOTIONVECTORS_NORMALS)\n\tfloat fogFactor = Color::FogAlpha(input.FogParam.w);",
+          "asset": "EffectActor.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\talpha = Color::EffectAlpha(alpha);",
+          "asset": "EffectEyes.hlsli",
+          "after": true
+        },
+        {
+          "anchor": "\tpsout.Albedo = float4(psout.Diffuse.xyz * !(Permutation::VertexShaderDescriptor & Permutation::EffectFlags::SkyObject), finalColor.w);",
+          "asset": "EffectAlbedo.hlsli",
+          "after": true
+        }
       ]
     },
     {
@@ -29,8 +53,16 @@
       "sourceSHA256": "02906ae48907d50c4c0042e3bbac77ed969e436ecf59f035c5c092f97ac087a9",
       "os217": true,
       "insertions": [
-        { "anchor": "PS_OUTPUT main(PS_INPUT input", "asset": "Declarations.hlsli", "after": false },
-        { "anchor": "\tfloat3 outputAlbedo = indirectLobeWeights.diffuse * vertexColor.xyz;", "asset": "Lighting.hlsli", "after": false }
+        {
+          "anchor": "PS_OUTPUT main(PS_INPUT input",
+          "asset": "Declarations.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\tfloat3 outputAlbedo = indirectLobeWeights.diffuse * vertexColor.xyz;",
+          "asset": "Lighting.hlsli",
+          "after": false
+        }
       ]
     },
     {
@@ -39,10 +71,118 @@
       "sourceSHA256": "c88e5a18cdd5cdd853e18272bf1c657f251109d558196973c99024b8e671b7d4",
       "os217": true,
       "insertions": [
-        { "anchor": "PS_OUTPUT main(PS_INPUT input", "asset": "Declarations.hlsli", "after": false },
-        { "anchor": "#\tif !defined(MOTIONVECTORS_NORMALS)\n\tfloat fogFactor = Color::FogAlpha(input.FogParam.w);", "asset": "EffectActor.hlsli", "after": false },
-        { "anchor": "\tfloat4 finalColor = float4(blendedColor, alpha);", "asset": "EffectEyes.hlsli", "after": false },
-        { "anchor": "\tpsout.Albedo = float4(auxiliaryColor * !(Permutation::VertexShaderDescriptor & Permutation::EffectFlags::SkyObject), finalColor.w);", "asset": "EffectAlbedo.hlsli", "after": true }
+        {
+          "anchor": "PS_OUTPUT main(PS_INPUT input",
+          "asset": "Declarations.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "#\tif !defined(MOTIONVECTORS_NORMALS)\n\tfloat fogFactor = Color::FogAlpha(input.FogParam.w);",
+          "asset": "EffectActor.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\tfloat4 finalColor = float4(blendedColor, alpha);",
+          "asset": "EffectEyes.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\tpsout.Albedo = float4(auxiliaryColor * !(Permutation::VertexShaderDescriptor & Permutation::EffectFlags::SkyObject), finalColor.w);",
+          "asset": "EffectAlbedo.hlsli",
+          "after": true
+        }
+      ]
+    },
+    {
+      "version": "Community Shaders 1.9.1",
+      "family": "Lighting",
+      "sourceSHA256": "41246cb43a9f05e69c8d69934db0ae31e11866bec97cbba9de84718150ed8263",
+      "os217": false,
+      "insertions": [
+        {
+          "anchor": "PS_OUTPUT main(PS_INPUT input",
+          "asset": "Declarations.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\tfloat3 outputAlbedo = indirectLobeWeights.diffuse * vertexColor.xyz;",
+          "asset": "Lighting.hlsli",
+          "after": false
+        }
+      ]
+    },
+    {
+      "version": "Community Shaders 1.9.1",
+      "family": "Effect",
+      "sourceSHA256": "a66be78b160cf11a7e7ac96f421b72e902c3feee0a414fa3061882b602fdf4e9",
+      "os217": false,
+      "insertions": [
+        {
+          "anchor": "PS_OUTPUT main(PS_INPUT input",
+          "asset": "Declarations.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "#\tif !defined(MOTIONVECTORS_NORMALS)\n\tfloat fogFactor = Color::FogAlpha(input.FogParam.w);",
+          "asset": "EffectActor.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\talpha = Color::EffectAlpha(alpha);",
+          "asset": "EffectEyes.hlsli",
+          "after": true
+        },
+        {
+          "anchor": "\tpsout.Albedo = float4(psout.Diffuse.xyz * !(Permutation::VertexShaderDescriptor & Permutation::EffectFlags::SkyObject), finalColor.w);",
+          "asset": "EffectAlbedo.hlsli",
+          "after": true
+        }
+      ]
+    },
+    {
+      "version": "Bottle Shaders (uploaded sources)",
+      "family": "Lighting",
+      "sourceSHA256": "b87c816e867bc706777cc7e41f532d70872a1fb57b4a49a489c247d55314750c",
+      "os217": false,
+      "insertions": [
+        {
+          "anchor": "PS_OUTPUT main(PS_INPUT input",
+          "asset": "Declarations.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\tfloat3 outputAlbedo = indirectLobeWeights.diffuse * vertexColor.xyz;",
+          "asset": "Lighting.hlsli",
+          "after": false
+        }
+      ]
+    },
+    {
+      "version": "Bottle Shaders (uploaded sources)",
+      "family": "Effect",
+      "sourceSHA256": "a731405db97ebc969767c21d10e62f0df87dddf94d4bcefa72db420e0e632313",
+      "os217": false,
+      "insertions": [
+        {
+          "anchor": "PS_OUTPUT main(PS_INPUT input",
+          "asset": "Declarations.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "#\tif !defined(MOTIONVECTORS_NORMALS)\n\tfloat fogFactor = Color::FogAlpha(input.FogParam.w);",
+          "asset": "EffectActor.hlsli",
+          "after": false
+        },
+        {
+          "anchor": "\talpha = Color::EffectAlpha(alpha);",
+          "asset": "EffectEyes.hlsli",
+          "after": true
+        },
+        {
+          "anchor": "\tpsout.Albedo = float4(psout.Diffuse.xyz * !(Permutation::VertexShaderDescriptor & Permutation::EffectFlags::SkyObject), finalColor.w);",
+          "asset": "EffectAlbedo.hlsli",
+          "after": true
+        }
       ]
     }
   ]
