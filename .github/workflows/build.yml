@@ -1,0 +1,46 @@
+
+name: Build Truly Night Eye
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-2025-vs2026
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup vcpkg
+        shell: pwsh
+        run: |
+          "VCPKG_ROOT=C:\vcpkg" >> $env:GITHUB_ENV
+
+      - name: Configure
+        run: cmake --preset Release
+
+      - name: Build
+        run: cmake --build --preset Release
+
+      - name: Package
+        run: python tools/BuildPackage.py
+
+      - name: Upload DLL
+        uses: actions/upload-artifact@v4
+        with:
+          name: NightEye-DLL
+          path: build/Release/Release/NightEye.dll
+
+      - name: Upload Mod ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: Truly-Night-Eye
+          path: dist/*.zip
