@@ -7,6 +7,7 @@ namespace
 		NIGHT_EYE_VERSION_MAJOR, NIGHT_EYE_VERSION_MINOR, NIGHT_EYE_VERSION_PATCH
 	};
 	constexpr std::array kSupportedHosts{ REL::Version{ 1, 8, 4 },
+        REL::Version{ 1, 9, 0 },  // Bottle Shaders
 		REL::Version{ 2, 17, 0 } };
 	constexpr std::size_t kTrampolineBytes = 512;
 	constexpr DWORD kModulePathCharacters = 32768;
