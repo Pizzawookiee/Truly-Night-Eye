@@ -152,7 +152,7 @@ namespace night_eye
 		void LoadRecipes()
 		{
 			const auto document = nlohmann::json::parse(ReadText(kAdapterDirectory / L"Recipes.json"));
-			if (document.at("schema").get<unsigned int>() != 1 || !document.at("recipes").is_array() || document.at("recipes").size() != 4)
+			if (document.at("schema").get<unsigned int>() != 1 || !document.at("recipes").is_array() || document.at("recipes").empty())
 				throw std::runtime_error("Unsupported shader recipe schema");
 			for (const auto& item : document.at("recipes")) {
 				Recipe recipe;
